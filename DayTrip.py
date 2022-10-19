@@ -42,3 +42,4 @@ my_third_day_trip_dictionary = {
     "Waterpark": "Spend the day at the waterpark."
 }
 
+print(my_second_day_trip_dictionary)
