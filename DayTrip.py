@@ -1,9 +1,10 @@
 import random
+from re import T
 from tkinter import N, Y
 destination = ["Cincinnati", "Chicago", "Orlando", "Mason, OH", "Myrtle Beach", "Tampa Bay"] 
-transportation = ["car", "train", "airplane"]
+transportation = ["a car", "a train", "an airplane"]
 restaurant = ["Chick-Fil-A", "Skyline Chili", "La Rosas", "Outback Steakhouse", "Olive Garden"]
-entertainment = ["baseball game", "football game", "basketball game", "Kings Island", "the beach"]
+entertainment = ["a baseball game", "a football game", "a basketball game", "Kings Island", "the beach"]
 
 trip_dictionary = {
     "destination": "Mason, OH", 
@@ -25,7 +26,7 @@ while True:
 
 while True:
     random_tran = random.choice(transportation)
-    print(f"How does {random_tran} sound for your destination?")
+    print(f"How does {random_tran} sound for your transportation?")
     user_choice = input("Please enter Y or N: ")
     if user_choice == Y:
         print(f"Sounds great! Let's get your {random_tran}!")
@@ -36,7 +37,7 @@ while True:
 
 while True:
     random_rest = random.choice(restaurant)
-    print(f"How does {random_rest} sound for your destination?")
+    print(f"How does {random_rest} sound for your restaurant?")
     user_choice = input("Please enter Y or N: ")
     if user_choice == Y:
         print(f"Yum! Enjoy the pizza from {random_dest}!")
@@ -56,3 +57,7 @@ while True:
     elif user_choice == N:
         print(f"That's okay. There's more entertainment to choose.")
 
+
+final_trip = "Drive to Mason, OH in your car head to Kings Island and have some La Rosas pizza while there."
+
+print(final_trip)
