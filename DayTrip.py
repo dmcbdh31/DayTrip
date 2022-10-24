@@ -1,45 +1,58 @@
+import random
+from tkinter import N, Y
+destination = ["Cincinnati", "Chicago", "Orlando", "Mason, OH", "Myrtle Beach", "Tampa Bay"] 
+transportation = ["car", "train", "airplane"]
+restaurant = ["Chick-Fil-A", "Skyline Chili", "La Rosas", "Outback Steakhouse", "Olive Garden"]
+entertainment = ["baseball game", "football game", "basketball game", "Kings Island", "the beach"]
 
-
-destinations = ['Cincinnati', 'Kings Island', 'Holiday World']
-
-for destination in destinations:
-    print(destination)
-
-restaurants = ['Skyline Chili', 'La Rosas', 'Chick-Fil-A']
-
-for restaurant in restaurants:
-    print(restaurant)
-
-mode_of_transportation = ['Rental Car', 'My Car', 'Airplane']
-
-for transportation in mode_of_transportation:
-    print(transportation)
-
-entertainment = ['baseball game', 'Roller Coasters', 'Waterpark']
-
-for entertainment in entertainment:
-    print(entertainment)
-
-
-my_first_day_trip_dictionary = {
-    "Cincinnati": "A family outing to a baseball game.",
-    "Rental Car": "Rent a car for the day.",
-    "Skyline Chili": "Have some Cincinnati own Skyline Chili for lunch.",
-    "baseball game": "Enjoy a late afternoon game at Great American Ballpark."
+trip_dictionary = {
+    "destination": "Mason, OH", 
+    "transportation": "car",
+    "restaurant": "La Rosas",
+    "entertainment": "Kings Island"
 }
 
-my_second_day_trip_dictionary = {
-    "Kings Island": "Fun for the whole family.",
-    "My Car": "Close enough to drive your own car.",
-    "La Rosas": "Have a La Rosas pizza.",
-    "Roller Coasters": "Enjoy the many roller coasters or other rides."
-}
+while True:
+    random_dest = random.choice(destination)
+    print(f"How does {random_dest} sound for your destination?")
+    user_choice = input("Please enter Y or N: ")
+    if user_choice == Y:
+        print(f"Sounds great! You are sure to have fun in {random_dest}!")
+        trip_dictionary["destination"] = random_dest
+        break
+    elif user_choice == N:
+        print(f"That's okay. We will choose another destination.")
 
-my_third_day_trip_dictionary = {
-    "Holiday World": "Visit Santa in July.",
-    "Rental Car": "Take a rental car for the drive.",
-    "Chick-Fil-A": "No need for Chick-Fil-A, plenty of choices inside the park.",
-    "Waterpark": "Spend the day at the waterpark."
-}
+while True:
+    random_tran = random.choice(transportation)
+    print(f"How does {random_tran} sound for your destination?")
+    user_choice = input("Please enter Y or N: ")
+    if user_choice == Y:
+        print(f"Sounds great! Let's get your {random_tran}!")
+        trip_dictionary["transportation"] = random_tran
+        break
+    elif user_choice == N:
+        print(f"That's okay. We will choose other transportation.")
 
-print(my_second_day_trip_dictionary)
+while True:
+    random_rest = random.choice(restaurant)
+    print(f"How does {random_rest} sound for your destination?")
+    user_choice = input("Please enter Y or N: ")
+    if user_choice == Y:
+        print(f"Yum! Enjoy the pizza from {random_dest}!")
+        trip_dictionary["restaurant"] = random_rest
+        break
+    elif user_choice == N:
+        print(f"That's okay. Let's pick a different restaurant.")
+
+while True:
+    random_ent = random.choice(entertainment)
+    print(f"How does {random_ent} sound for your entertainment?")
+    user_choice = input("Please enter Y or N: ")
+    if user_choice == Y:
+        print(f"Sounds exciting! Let's ride some roller coasters at {random_ent}!")
+        trip_dictionary["entertainment"] = random_ent
+        break
+    elif user_choice == N:
+        print(f"That's okay. There's more entertainment to choose.")
+
